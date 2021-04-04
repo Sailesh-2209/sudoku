@@ -1,7 +1,9 @@
 import React from 'react';
+import { BodyContainer } from './containers/BodyContainer';
+import './App.css';
 
 function App() {
-  return <div>Hello typescript react world</div>
+  return <BodyContainer />
 }
 
 export default App;

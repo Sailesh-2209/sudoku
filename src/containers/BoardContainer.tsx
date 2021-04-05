@@ -19,8 +19,15 @@ export const BoardContainer: React.FC = () => {
               {rowArray.map((item: number, innerIndex: number) => {
                 if (outerIndex === 0) {
                   return (
-                    <Board.LeftBlock key={`${innerIndex}`}>
-                      <p>0</p>
+                    <Board.LeftBlock
+                      key={`${innerIndex}`}
+                      onClick={(e) => console.log(e.target)}
+                    >
+                      <p>
+                        {boardArray[outerIndex][innerIndex] === 0
+                          ? null
+                          : boardArray[innerIndex][outerIndex]}
+                      </p>
                     </Board.LeftBlock>
                   );
                 } else if (
@@ -30,7 +37,11 @@ export const BoardContainer: React.FC = () => {
                 ) {
                   return (
                     <Board.TopBlock key={`${innerIndex}`}>
-                      <p>0</p>
+                      <p>
+                        {boardArray[outerIndex][innerIndex] === 0
+                          ? null
+                          : boardArray[innerIndex][outerIndex]}
+                      </p>
                     </Board.TopBlock>
                   );
                 } else if (
@@ -40,19 +51,31 @@ export const BoardContainer: React.FC = () => {
                 ) {
                   return (
                     <Board.BottomBlock key={`${innerIndex}`}>
-                      <p>0</p>
+                      <p>
+                        {boardArray[outerIndex][innerIndex] === 0
+                          ? null
+                          : boardArray[innerIndex][outerIndex]}
+                      </p>
                     </Board.BottomBlock>
                   );
                 } else if (outerIndex === 8) {
                   return (
                     <Board.RightBlock key={`${innerIndex}`}>
-                      <p>0</p>
+                      <p>
+                        {boardArray[outerIndex][innerIndex] === 0
+                          ? null
+                          : boardArray[innerIndex][outerIndex]}
+                      </p>
                     </Board.RightBlock>
                   );
                 } else {
                   return (
                     <Board.MiddleBlock key={`${innerIndex}`}>
-                      <p>0</p>
+                      <p>
+                        {boardArray[outerIndex][innerIndex] === 0
+                          ? null
+                          : boardArray[innerIndex][outerIndex]}
+                      </p>
                     </Board.MiddleBlock>
                   );
                 }

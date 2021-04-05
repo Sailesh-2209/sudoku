@@ -13,6 +13,7 @@ import {
 type Props = {
   children: JSX.Element | JSX.Element[] | string;
   restProps?: object;
+  onClick?: React.MouseEventHandler;
 };
 
 const Board = ({ children, ...restProps }: Props) => {

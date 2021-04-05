@@ -3,18 +3,23 @@ import { Container, Heading, HeadingText } from "./styles/body";
 
 type props = {
   children: JSX.Element | JSX.Element[] | string;
+  restProps?: object;
+  onClick?: React.MouseEventHandler;
 };
 
-const Body = ({ children }: props) => {
-  return <Container>{children}</Container>;
+const Body = ({ children, ...restProps }: props) => {
+  return <Container {...restProps}>{children}</Container>;
 };
 
-Body.HeadingContainer = function BodyHeadingContainer({ children }: props) {
-  return <Heading>{children}</Heading>;
+Body.HeadingContainer = function BodyHeadingContainer({
+  children,
+  ...restProps
+}: props) {
+  return <Heading {...restProps}>{children}</Heading>;
 };
 
-Body.HeadingText = function BodyHeadingText({ children }: props) {
-  return <HeadingText>{children}</HeadingText>;
+Body.HeadingText = function BodyHeadingText({ children, ...restProps }: props) {
+  return <HeadingText {...restProps}>{children}</HeadingText>;
 };
 
 export default Body;

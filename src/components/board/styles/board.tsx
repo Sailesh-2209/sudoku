@@ -11,6 +11,19 @@ export const MiddleBlock = styled.div`
   border: 1px solid #e4e4e4;
   margin: 0;
   padding: 0;
+  text-align: center;
+  align-items: center;
+  position: relative;
+
+  p {
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    padding: 0;
+    margin: -25% 0 0 -10%;
+    top: 50%;
+    left: 50%;
+  }
 
   @media (max-width: 520px) {
     height: 40px;

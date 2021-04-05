@@ -19,7 +19,9 @@ export const BoardContainer: React.FC = () => {
               {rowArray.map((item: number, innerIndex: number) => {
                 if (outerIndex === 0) {
                   return (
-                    <Board.LeftBlock key={`${innerIndex}`}>0</Board.LeftBlock>
+                    <Board.LeftBlock key={`${innerIndex}`}>
+                      <p>0</p>
+                    </Board.LeftBlock>
                   );
                 } else if (
                   innerIndex === 0 &&
@@ -27,7 +29,9 @@ export const BoardContainer: React.FC = () => {
                   outerIndex !== 8
                 ) {
                   return (
-                    <Board.TopBlock key={`${innerIndex}`}>0</Board.TopBlock>
+                    <Board.TopBlock key={`${innerIndex}`}>
+                      <p>0</p>
+                    </Board.TopBlock>
                   );
                 } else if (
                   innerIndex === 8 &&
@@ -36,17 +40,19 @@ export const BoardContainer: React.FC = () => {
                 ) {
                   return (
                     <Board.BottomBlock key={`${innerIndex}`}>
-                      0
+                      <p>0</p>
                     </Board.BottomBlock>
                   );
                 } else if (outerIndex === 8) {
                   return (
-                    <Board.RightBlock key={`${innerIndex}`}>0</Board.RightBlock>
+                    <Board.RightBlock key={`${innerIndex}`}>
+                      <p>0</p>
+                    </Board.RightBlock>
                   );
                 } else {
                   return (
                     <Board.MiddleBlock key={`${innerIndex}`}>
-                      0
+                      <p>0</p>
                     </Board.MiddleBlock>
                   );
                 }

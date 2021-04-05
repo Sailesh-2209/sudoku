@@ -1,33 +1,70 @@
-import React from 'react';
-import { Container, Text, ButtonContainer, IconContainer } from './styles/heading';
+import React from "react";
+import { IconContext } from "react-icons";
+import { BsDot } from "react-icons/bs";
+import {
+  Container,
+  Text,
+  ButtonContainer,
+  IconContainer,
+  ItemContainer,
+  InfoContainer,
+  InfoHeading,
+  TextSmall,
+} from "./styles/heading";
 
 type Props = {
-    children: JSX.Element[] | string | JSX.Element;
-    restProps?: object;
-}
+  children: JSX.Element[] | string | JSX.Element;
+  restProps?: object;
+};
 
 const Heading = ({ children, ...restProps }: Props) => {
-    return(
-        <Container {...restProps} >{children}</Container>
-    );
-}
+  return <Container {...restProps}>{children}</Container>;
+};
 
-Heading.Text = function HeadingText ({ children, ...restProps }: Props) {
-    return(
-        <Text {...restProps}>{children}</Text>
-    );
-}
+Heading.Text = function HeadingText({ children, ...restProps }: Props) {
+  return <Text {...restProps}>{children}</Text>;
+};
 
-Heading.ButtonContainer = function HeadingButtonContainer ({ children, ...restProps }: Props) {
-    return(
-        <ButtonContainer {...restProps}>{children}</ButtonContainer>
-    );
-}
+Heading.ButtonContainer = function HeadingButtonContainer({
+  children,
+  ...restProps
+}: Props) {
+  return <ButtonContainer {...restProps}>{children}</ButtonContainer>;
+};
 
-Heading.IconContainer = function HeadingIconContainer ({ children, ...restProps }: Props) {
-    return (
-        <IconContainer {...restProps}>{children}</IconContainer>
-    );
-}
+Heading.IconContainer = function HeadingIconContainer({
+  children,
+  ...restProps
+}: Props) {
+  return <IconContainer {...restProps}>{children}</IconContainer>;
+};
+
+Heading.InfoContainer = function HeadingInfoContainer({
+  children,
+  ...restProps
+}: Props) {
+  return <InfoContainer {...restProps}>{children}</InfoContainer>;
+};
+
+Heading.InfoHeading = function HeadingInfoHeading({
+  children,
+  ...restProps
+}: Props) {
+  return <InfoHeading {...restProps}>{children}</InfoHeading>;
+};
+
+Heading.TextSmall = function HeadingTextSmall({
+  children,
+  ...restProps
+}: Props) {
+  return (
+    <ItemContainer>
+      <IconContext.Provider value={{ color: "white", size: "35" }}>
+        <BsDot />
+      </IconContext.Provider>
+      <TextSmall {...restProps}>{children}</TextSmall>
+    </ItemContainer>
+  );
+};
 
 export default Heading;

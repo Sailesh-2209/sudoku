@@ -8,6 +8,7 @@ export const BodyContainer: React.FC = () => {
     <Body>
       <HeadingContainer />
       <BoardContainer />
+      <button className="solve">Solve</button>
     </Body>
   );
 };

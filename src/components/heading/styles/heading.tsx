@@ -14,7 +14,8 @@ export const Text = styled.p`
   font-family: "Lato", sans-serif;
   font-weight: 600;
   letter-spacing: 5px;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 40px;
   color: white;
 `;
 

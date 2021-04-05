@@ -11,11 +11,6 @@ export const HeadingContainer: React.FC = () => {
 
   const clickHandler = () => {
     setClicked((clicked) => !clicked);
-    if (clicked) {
-      setTimeout(() => {
-        setClicked(false);
-      }, 6600);
-    }
   };
 
   return (

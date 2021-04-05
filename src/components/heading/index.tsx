@@ -12,10 +12,10 @@ import {
   TextSmall,
 } from "./styles/heading";
 
-type Props = {
+interface Props {
   children: JSX.Element[] | string | JSX.Element;
   restProps?: object;
-};
+}
 
 const Heading = ({ children, ...restProps }: Props) => {
   return <Container {...restProps}>{children}</Container>;
@@ -35,7 +35,11 @@ Heading.ButtonContainer = function HeadingButtonContainer({
 Heading.IconContainer = function HeadingIconContainer({
   children,
   ...restProps
-}: Props) {
+}: {
+  children: JSX.Element | JSX.Element | string;
+  restProps?: object;
+  onClick?: React.MouseEventHandler<HTMLElement>;
+}) {
   return <IconContainer {...restProps}>{children}</IconContainer>;
 };
 

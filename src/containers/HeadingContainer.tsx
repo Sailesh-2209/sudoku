@@ -1,4 +1,3 @@
-// @ts-ignore
 import React, { useState } from "react";
 import { Heading } from "../components";
 import { /* BiSun, */ BiMoon } from "react-icons/bi";
@@ -10,28 +9,30 @@ import { IconContext } from "react-icons";
 export const HeadingContainer: React.FC = () => {
   const [clicked, setClicked] = useState(false);
 
-  const clickHandler = (clicked: boolean) => {
+  const clickHandler = () => {
     setClicked((clicked) => !clicked);
     if (clicked) {
       setTimeout(() => {
         setClicked(false);
-      }, 3600);
+      }, 6600);
     }
   };
 
   return (
-    <Heading>
-      <Heading.Text>Sudoku</Heading.Text>
-      <Heading.ButtonContainer>
-        <IconContext.Provider value={{ color: "white", size: "32" }}>
-          <Heading.IconContainer>
-            <BiMoon />
-          </Heading.IconContainer>
-          <Heading.IconContainer onClick={() => clickHandler(clicked)}>
-            <AiOutlineQuestionCircle />
-          </Heading.IconContainer>
-        </IconContext.Provider>
-      </Heading.ButtonContainer>
+    <>
+      <Heading>
+        <Heading.Text>Sudoku</Heading.Text>
+        <Heading.ButtonContainer>
+          <IconContext.Provider value={{ color: "white", size: "32" }}>
+            <Heading.IconContainer>
+              <BiMoon />
+            </Heading.IconContainer>
+            <Heading.IconContainer onClick={() => clickHandler()}>
+              <AiOutlineQuestionCircle />
+            </Heading.IconContainer>
+          </IconContext.Provider>
+        </Heading.ButtonContainer>
+      </Heading>
       {clicked && (
         <Heading.InfoContainer>
           <Heading.InfoHeading>How it works</Heading.InfoHeading>
@@ -46,6 +47,6 @@ export const HeadingContainer: React.FC = () => {
           </Heading.TextSmall>
         </Heading.InfoContainer>
       )}
-    </Heading>
+    </>
   );
 };

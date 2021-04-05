@@ -6,11 +6,13 @@ import {
   RightBlock,
   BottomBlock,
   LeftBlock,
+  RowContainer,
+  ColumnContainer,
 } from "./styles/board";
 
 type Props = {
   children: JSX.Element | JSX.Element[] | string;
-  restProps: object;
+  restProps?: object;
 };
 
 const Board = ({ children, ...restProps }: Props) => {
@@ -38,6 +40,20 @@ Board.MiddleBlock = function BoardMiddleblock({
   ...restProps
 }: Props) {
   return <MiddleBlock {...restProps}>{children}</MiddleBlock>;
+};
+
+Board.ColumnContainer = function BoardColumnContainer({
+  children,
+  ...restProps
+}: Props) {
+  return <ColumnContainer {...restProps}>{children}</ColumnContainer>;
+};
+
+Board.RowContainer = function BoardRowContainer({
+  children,
+  ...restProps
+}: Props) {
+  return <RowContainer {...restProps}>{children}</RowContainer>;
 };
 
 export default Board;

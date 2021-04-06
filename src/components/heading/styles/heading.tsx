@@ -36,6 +36,7 @@ export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 400px;
+  transition: 0.5s ease;
 
   @media (max-width: 1100px) {
     max-width: 250px;

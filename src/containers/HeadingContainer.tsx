@@ -9,10 +9,6 @@ import { IconContext } from "react-icons";
 export const HeadingContainer: React.FC = () => {
   const [clicked, setClicked] = useState(false);
 
-  const clickHandler = () => {
-    setClicked((clicked) => !clicked);
-  };
-
   return (
     <>
       <Heading>
@@ -22,7 +18,10 @@ export const HeadingContainer: React.FC = () => {
             <Heading.IconContainer>
               <BiMoon />
             </Heading.IconContainer>
-            <Heading.IconContainer onClick={() => clickHandler()}>
+            <Heading.IconContainer
+              onMouseEnter={() => setClicked(true)}
+              onMouseLeave={() => setClicked(false)}
+            >
               <AiOutlineQuestionCircle />
             </Heading.IconContainer>
           </IconContext.Provider>

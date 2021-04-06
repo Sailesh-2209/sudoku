@@ -38,7 +38,8 @@ Heading.IconContainer = function HeadingIconContainer({
 }: {
   children: JSX.Element | JSX.Element | string;
   restProps?: object;
-  onClick?: React.MouseEventHandler<HTMLElement>;
+  onMouseEnter?: React.MouseEventHandler<HTMLElement>;
+  onMouseLeave?: React.MouseEventHandler<HTMLElement>;
 }) {
   return <IconContainer {...restProps}>{children}</IconContainer>;
 };

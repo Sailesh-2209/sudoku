@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Buttons } from "../components";
 import { generateNewBoard } from "../utils/newBoardGen";
-import { BoardContext } from "../context/boardContext";
 
-export const ButtonContainer: React.FC = () => {
+export const ButtonContainer: React.FC<{
+  setBoardArray: React.ComponentState;
+}> = ({ setBoardArray }) => {
   // @ts-ignore
-  const { setBoardArray } = useContext(BoardContext);
-
   const handleNewBoard = () => {
     let newBoard = generateNewBoard();
     setBoardArray(newBoard);

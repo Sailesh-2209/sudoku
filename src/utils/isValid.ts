@@ -10,7 +10,6 @@ export const isValid: (
   let neighbours: number[][] = findNeighbours(rowIndex, columnIndex);
   neighbours.forEach((item) => {
     if (array[item[0]][item[1]] === number) {
-      console.log("false");
       return false;
     }
   });
@@ -18,7 +17,6 @@ export const isValid: (
   // check if the number is present in the current column
   for (let i = 0; i < 9; i++) {
     if (array[rowIndex][i] === number) {
-      console.log("false");
       return false;
     }
   }
@@ -26,12 +24,10 @@ export const isValid: (
   // check if the number is present in the current row
   for (let i = 0; i < 9; i++) {
     if (array[i][columnIndex] === number) {
-      console.log("false");
       return false;
     }
   }
 
   // if number is not present in the row, column or square return zero
-  console.log("true");
   return true;
 };

@@ -12,18 +12,17 @@ export const generateNewBoard: () => number[][] = () => {
   // filling array
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
-      while (true) {
+      let count = 0;
+      while (count < 9) {
+        console.log("hello");
+        count += 1;
         let newNum: number = GenerateRandomNumber();
         if (isValid(i, j, newNum, newBoardArray)) {
           newBoardArray[i][j] = newNum;
-          break;
-        } else {
-          newBoardArray[i][j] = 0;
           break;
         }
       }
     }
   }
-
   return newBoardArray;
 };

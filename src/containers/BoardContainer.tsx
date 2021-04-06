@@ -1,16 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Board } from "../components";
-import { BoardContext } from "../context/boardContext";
 
-export const BoardContainer: React.FC = () => {
-  let initialArray: number[][] = new Array(9).fill(0);
-  for (let i = 0; i < 9; i++) {
-    initialArray[i] = new Array(9).fill(0);
-  }
-
-  // @ts-ignore
-  const { boardArray } = useContext(BoardContext);
-
+export const BoardContainer: React.FC<{ boardArray: React.ComponentState }> = ({
+  boardArray,
+}) => {
+  console.log("boardContainer", boardArray);
   return (
     <Board>
       <Board.RowContainer>

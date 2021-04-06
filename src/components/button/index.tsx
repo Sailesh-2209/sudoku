@@ -11,6 +11,7 @@ type Props = {
         HTMLInputElement
       >;
   restProps?: object;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 };
 
 const Buttons = ({ children, ...restProps }: Props) => {

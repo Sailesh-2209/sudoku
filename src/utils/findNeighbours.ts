@@ -8,7 +8,7 @@ export const findNeighbours = (rowIndex: number, columnIndex: number) => {
         }
       }
       neighbourList = neighbourList.filter((item) => {
-        if (item[0] !== rowIndex && item[1] !== columnIndex) {
+        if (item[0] === rowIndex && item[1] === columnIndex) {
           return false;
         } else {
           return true;
@@ -21,7 +21,7 @@ export const findNeighbours = (rowIndex: number, columnIndex: number) => {
         }
       }
       neighbourList = neighbourList.filter((item) => {
-        if (item[0] !== rowIndex && item[1] !== columnIndex) {
+        if (item[0] === rowIndex && item[1] === columnIndex) {
           return false;
         } else {
           return true;
@@ -34,7 +34,7 @@ export const findNeighbours = (rowIndex: number, columnIndex: number) => {
         }
       }
       neighbourList = neighbourList.filter((item) => {
-        if (item[0] !== rowIndex && item[1] !== columnIndex) {
+        if (item[0] === rowIndex && item[1] === columnIndex) {
           return false;
         } else {
           return true;
@@ -49,7 +49,7 @@ export const findNeighbours = (rowIndex: number, columnIndex: number) => {
         }
       }
       neighbourList = neighbourList.filter((item) => {
-        if (item[0] !== rowIndex && item[1] !== columnIndex) {
+        if (item[0] === rowIndex && item[1] === columnIndex) {
           return false;
         } else {
           return true;
@@ -62,7 +62,7 @@ export const findNeighbours = (rowIndex: number, columnIndex: number) => {
         }
       }
       neighbourList = neighbourList.filter((item) => {
-        if (item[0] !== rowIndex && item[1] !== columnIndex) {
+        if (item[0] === rowIndex && item[1] === columnIndex) {
           return false;
         } else {
           return true;
@@ -75,7 +75,7 @@ export const findNeighbours = (rowIndex: number, columnIndex: number) => {
         }
       }
       neighbourList = neighbourList.filter((item) => {
-        if (item[0] !== rowIndex && item[1] !== columnIndex) {
+        if (item[0] === rowIndex && item[1] === columnIndex) {
           return false;
         } else {
           return true;
@@ -90,7 +90,7 @@ export const findNeighbours = (rowIndex: number, columnIndex: number) => {
         }
       }
       neighbourList = neighbourList.filter((item) => {
-        if (item[0] !== rowIndex && item[1] !== columnIndex) {
+        if (item[0] === rowIndex && item[1] === columnIndex) {
           return false;
         } else {
           return true;
@@ -103,7 +103,7 @@ export const findNeighbours = (rowIndex: number, columnIndex: number) => {
         }
       }
       neighbourList = neighbourList.filter((item) => {
-        if (item[0] !== rowIndex && item[1] !== columnIndex) {
+        if (item[0] === rowIndex && item[1] === columnIndex) {
           return false;
         } else {
           return true;
@@ -116,7 +116,7 @@ export const findNeighbours = (rowIndex: number, columnIndex: number) => {
         }
       }
       neighbourList = neighbourList.filter((item) => {
-        if (item[0] !== rowIndex && item[1] !== columnIndex) {
+        if (item[0] === rowIndex && item[1] === columnIndex) {
           return false;
         } else {
           return true;

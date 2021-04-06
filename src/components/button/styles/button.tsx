@@ -15,6 +15,7 @@ export const Button = styled.div`
   background-color: whitesmoke;
   color: rgb(14, 20, 51);
   transition: 0.5s ease;
+  outline: none;
 
   &:hover {
     background-color: #969090;
@@ -33,4 +34,5 @@ export const Container = styled.button`
   border: 0;
   margin: 0;
   padding: 0;
+  outline: none;
 `;

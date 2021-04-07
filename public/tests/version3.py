@@ -107,31 +107,6 @@ def is_valid(row_index, col_index, number, array):
             return False
     return True
 
-def generate_board(original_array):
-    array = original_array.copy()
-    i = 0
-    while (i >= 0 and i < 9):
-        j = 0
-        while (j >= 0 and j < 9):
-            print(print_board(array))
-            new_num = array[i][j] + 1
-            if (new_num < 10):
-                if (is_valid(i, j, new_num, array)):
-                    array[i][j] = new_num
-                    j += 1
-                else:
-                    array[i][j] = new_num
-            else:
-                if (j > 0):
-                    array[i][j] = 0
-                    j -= 1
-                else:
-                    i -= 1
-                    j = 8
-                    break
-        i += 1
-    return array
-
 def make_empty_list(array):
     empty_list = []
     for i in range(9):
@@ -144,7 +119,6 @@ def solve_board(board):
     i = 0
     empty_list = make_empty_list(board)
     while (i < len(empty_list)):
-        print_board(board)
         new_num = board[empty_list[i][0]][empty_list[i][1]] + 1
         if new_num < 10:
             if (is_valid(empty_list[i][0], empty_list[i][1], new_num, board)):
@@ -167,24 +141,8 @@ board_array = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
 ]
 
-board_array_2 = [
-    [0, 0, 9, 0, 0, 4, 0, 0, 0],
-    [0, 0, 0, 3, 0, 8, 2, 6, 0],
-    [0, 7, 0, 0, 1, 0, 0, 0, 0],
-    [4, 0, 1, 0, 0, 3, 0, 0, 8],
-    [8, 2, 0, 0, 0, 0, 0, 9, 4],
-    [9, 0, 0, 6, 0, 0, 5, 0, 1],
-    [0, 0, 0, 0, 2, 0, 0, 3, 0],
-    [0, 4, 3, 8, 0, 5, 0, 3, 0],
-    [0, 0, 0, 0, 0, 0, 7, 0, 0]
-]
-
-# print_board(generate_board(board_array))
-# print_board(board_array)
-print_board(solve_board(board_array_2))
-print('solution: \n')
-# print(is_valid(0, 0, 3, board_array_2))
+print(solve_board(board_array))
 sys.stdout.close()

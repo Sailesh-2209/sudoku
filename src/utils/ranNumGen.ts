@@ -1,4 +1,9 @@
-export const GenerateRandomNumber: () => number = () => {
-  let num: number = Math.floor(Math.random() * 9 + 1);
+const GenerateRandomNumber: (max: number, min: number) => number = (
+  max,
+  min
+) => {
+  let num: number = Math.floor(Math.random() * (max - min) + min);
   return num;
 };
+
+export default GenerateRandomNumber;

@@ -3,9 +3,11 @@ import { Body } from "../components";
 import { HeadingContainer } from "./HeadingContainer";
 import { BoardContainer } from "./BoardContainer";
 import { ButtonContainer } from "./ButtonContainer";
-import { generateNewBoard } from "../utils/newBoardGen";
+import { GenerateRandomNumber } from "../utils";
+import { Boards } from "../constants/boards";
 
-let initialBoard = generateNewBoard();
+let boardNumber: number = GenerateRandomNumber(0, Boards.length);
+let initialBoard = Boards[boardNumber];
 
 export const BodyContainer: React.FC = () => {
   const [boardArray, setBoardArray] = useState(initialBoard);

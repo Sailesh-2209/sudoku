@@ -1,6 +1,9 @@
 import random
+import sys
+sys.stdout = open('C:\\Users\\saile\\Desktop\\output.txt', 'w')
 
 def print_board(array):
+    print(' \n')
     for i in range(9):
         for j in range(9):
             print(array[i][j], end='')
@@ -129,31 +132,30 @@ def generate_board(original_array):
         i += 1
     return array
 
-def solve_board(original_board):
-    board = original_board.copy()
+def make_empty_list(array):
+    empty_list = []
+    for i in range(9):
+        for j in range(9):
+            if array[i][j] == 0:
+                empty_list.append([i, j])
+    return empty_list
+
+def solve_board(board):
     i = 0
-    while (i >= 0 and i < 9):
-        j = 0
-        while (j >= 0 and j < 9):
-            if (original_board[i][j] == 0):
-                new_num = board[i][j] + 1
-                if (new_num < 10):
-                    if (is_valid(i, j, new_num, board)):
-                        board[i][j] = new_num
-                        j += 1
-                    else:
-                        board[i][j] = new_num
-                else:
-                    board[i][j] = 0
-                    j -= 1
-                    while (original_board[i][j] != 0):
-                        if (j > 0):
-                            j =- 1
-                        else:
-                            i -= 1
-                            j = 8
-            j += 1
-        i += 1
+    empty_list = make_empty_list(board)
+    while (i < len(empty_list)):
+        print_board(board)
+        new_num = board[empty_list[i][0]][empty_list[i][1]] + 1
+        if new_num < 10:
+            if (is_valid(empty_list[i][0], empty_list[i][1], new_num, board)):
+                board[empty_list[i][0]][empty_list[i][1]] = new_num
+                i += 1
+            else:
+                board[empty_list[i][0]][empty_list[i][1]] = new_num
+        else:
+            board[empty_list[i][0]][empty_list[i][1]] = 0
+            if i > 0:
+                i -= 1
     return board
 
 board_array = [
@@ -169,18 +171,20 @@ board_array = [
 ]
 
 board_array_2 = [
-    [0, 6, 0, 0, 0, 4, 0, 0, 0],
-    [0, 0, 0, 0, 3, 6, 1, 0, 4],
-    [0, 5, 0, 8, 7, 0, 0, 0, 0],
-    [8, 2, 0, 0, 0, 0, 5, 0, 0],
-    [0, 7, 5, 0, 0, 0, 9, 1, 0],
-    [0, 0, 9, 0, 0, 0, 0, 8, 2],
-    [0, 0, 0, 0, 6, 5, 0, 9, 0],
-    [5, 0, 8, 3, 2, 0, 0, 0, 0],
-    [0, 0, 0, 1, 0, 0, 0, 4, 0]
+    [0, 0, 9, 0, 0, 4, 0, 0, 0],
+    [0, 0, 0, 3, 0, 8, 2, 6, 0],
+    [0, 7, 0, 0, 1, 0, 0, 0, 0],
+    [4, 0, 1, 0, 0, 3, 0, 0, 8],
+    [8, 2, 0, 0, 0, 0, 0, 9, 4],
+    [9, 0, 0, 6, 0, 0, 5, 0, 1],
+    [0, 0, 0, 0, 2, 0, 0, 3, 0],
+    [0, 4, 3, 8, 0, 5, 0, 3, 0],
+    [0, 0, 0, 0, 0, 0, 7, 0, 0]
 ]
 
 # print_board(generate_board(board_array))
 # print_board(board_array)
-# print_board(solve_board(board_array_2))
-print(is_valid(0, 0, 3, board_array_2))
+print_board(solve_board(board_array_2))
+print('solution: \n')
+# print(is_valid(0, 0, 3, board_array_2))
+sys.stdout.close()

@@ -3,6 +3,7 @@ import { Body } from "../components";
 import { HeadingContainer } from "./HeadingContainer";
 import { BoardContainer } from "./BoardContainer";
 import { ButtonContainer } from "./ButtonContainer";
+import { KeypadContainer } from "./KeypadContainer";
 import { GenerateRandomNumber } from "../utils";
 import { Boards } from "../constants/boards";
 
@@ -19,6 +20,7 @@ export const BodyContainer: React.FC = () => {
     <Body>
       <HeadingContainer />
       <BoardContainer boardArray={boardArray} />
+      <KeypadContainer />
       <ButtonContainer
         setBoardArray={setBoardArray}
         solution={solution}

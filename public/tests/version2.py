@@ -79,17 +79,17 @@ def find_block_neighbours(row_index, column_index, array):
                         neighbours.append([i, j])
     return neighbours
 
-def find_row_neighbours(row_index, column_index):
+def find_row_neighbours(row_index, column_index, array):
     neighbours = []
     for i in range(9):
-        if isinstance(array[i][j], int):
+        if isinstance(array[i], int):
             neighbours.append([row_index, i])
     return neighbours
 
-def find_col_neighbours(row_index, column_index):
+def find_col_neighbours(row_index, column_index, array):
     neighbours = []
     for i in range(9):
-        if isinstance(array[i][j], int):
+        if isinstance(array[i], int):
             neighbours.append([i, column_index])
     return neighbours
 

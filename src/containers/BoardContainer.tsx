@@ -21,7 +21,7 @@ export const BoardContainer: React.FC<{ boardArray: React.ComponentState }> = ({
                       <p>
                         {boardArray[outerIndex][innerIndex] === 0
                           ? null
-                          : boardArray[innerIndex][outerIndex]}
+                          : boardArray[outerIndex][innerIndex]}
                       </p>
                     </Board.LeftBlock>
                   );
@@ -35,7 +35,7 @@ export const BoardContainer: React.FC<{ boardArray: React.ComponentState }> = ({
                       <p>
                         {boardArray[outerIndex][innerIndex] === 0
                           ? null
-                          : boardArray[innerIndex][outerIndex]}
+                          : boardArray[outerIndex][innerIndex]}
                       </p>
                     </Board.TopBlock>
                   );
@@ -49,7 +49,7 @@ export const BoardContainer: React.FC<{ boardArray: React.ComponentState }> = ({
                       <p>
                         {boardArray[outerIndex][innerIndex] === 0
                           ? null
-                          : boardArray[innerIndex][outerIndex]}
+                          : boardArray[outerIndex][innerIndex]}
                       </p>
                     </Board.BottomBlock>
                   );
@@ -59,7 +59,7 @@ export const BoardContainer: React.FC<{ boardArray: React.ComponentState }> = ({
                       <p>
                         {boardArray[outerIndex][innerIndex] === 0
                           ? null
-                          : boardArray[innerIndex][outerIndex]}
+                          : boardArray[outerIndex][innerIndex]}
                       </p>
                     </Board.RightBlock>
                   );
@@ -69,7 +69,7 @@ export const BoardContainer: React.FC<{ boardArray: React.ComponentState }> = ({
                       <p>
                         {boardArray[outerIndex][innerIndex] === 0
                           ? null
-                          : boardArray[innerIndex][outerIndex]}
+                          : boardArray[outerIndex][innerIndex]}
                       </p>
                     </Board.MiddleBlock>
                   );

@@ -1,4 +1,4 @@
-import { GenerateRandomNumber } from "./ranNumGen";
+import GenerateRandomNumber from "./ranNumGen";
 import { isValid } from "./isValid";
 
 export const generateNewBoard: () => number[][] = () => {
@@ -13,7 +13,7 @@ export const generateNewBoard: () => number[][] = () => {
   const fill = () => {
     for (let i = 0; i < 9; i++) {
       for (let j = 0; j < 9; j++) {
-        let newNum = GenerateRandomNumber();
+        let newNum = GenerateRandomNumber(0, 9);
         if (isValid(i, j, newNum, newBoardArray)) {
           newBoardArray[i][j] = newNum;
         } else {

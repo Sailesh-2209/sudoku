@@ -1,14 +1,19 @@
 import React from "react";
 import { Buttons } from "../components";
-import { generateNewBoard } from "../utils/newBoardGen";
+import { GenerateRandomNumber } from "../utils";
+import { Boards } from "../constants/boards";
 
 export const ButtonContainer: React.FC<{
   setBoardArray: React.ComponentState;
-}> = ({ setBoardArray }) => {
-  // @ts-ignore
+  solution: React.ComponentState;
+  setSolution: React.ComponentState;
+}> = ({ setBoardArray, solution, setSolution }) => {
   const handleNewBoard = () => {
-    let newBoard = generateNewBoard();
+    let boardNumber: number = GenerateRandomNumber(0, Boards.length);
+    let newBoard = Boards[boardNumber][0];
+    let newSolution = Boards[boardNumber][1];
     setBoardArray(newBoard);
+    setSolution(newSolution);
   };
 
   return (
@@ -16,7 +21,9 @@ export const ButtonContainer: React.FC<{
       <Buttons.Button onClick={() => handleNewBoard()}>
         New Board
       </Buttons.Button>
-      <Buttons.Button>Solve</Buttons.Button>
+      <Buttons.Button onClick={() => setBoardArray(solution)}>
+        Solve
+      </Buttons.Button>
     </Buttons>
   );
 };

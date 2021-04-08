@@ -66,11 +66,28 @@ export const BoardContainer: React.FC<{
                       key={`${innerIndex}`}
                       onClick={(e) => clickHandler(e, outerIndex, innerIndex)}
                     >
-                      <Board.NumberContainer>
-                        {boardArray[outerIndex][innerIndex] === 0
-                          ? null
-                          : boardArray[outerIndex][innerIndex]}
-                      </Board.NumberContainer>
+                      {solved ? (
+                        <Board.NumberContainer
+                          color={
+                            boardArray[outerIndex][innerIndex] ===
+                            Boards[currentBoardNumber][1][outerIndex][
+                              innerIndex
+                            ]
+                              ? "green"
+                              : "red"
+                          }
+                        >
+                          {boardArray[outerIndex][innerIndex] === 0
+                            ? null
+                            : boardArray[outerIndex][innerIndex]}
+                        </Board.NumberContainer>
+                      ) : (
+                        <Board.NumberContainer>
+                          {boardArray[outerIndex][innerIndex] === 0
+                            ? null
+                            : boardArray[outerIndex][innerIndex]}
+                        </Board.NumberContainer>
+                      )}
                     </Board.LeftBlock>
                   );
                 } else if (
@@ -83,11 +100,28 @@ export const BoardContainer: React.FC<{
                       key={`${innerIndex}`}
                       onClick={(e) => clickHandler(e, outerIndex, innerIndex)}
                     >
-                      <Board.NumberContainer>
-                        {boardArray[outerIndex][innerIndex] === 0
-                          ? null
-                          : boardArray[outerIndex][innerIndex]}
-                      </Board.NumberContainer>
+                      {solved ? (
+                        <Board.NumberContainer
+                          color={
+                            boardArray[outerIndex][innerIndex] ===
+                            Boards[currentBoardNumber][1][outerIndex][
+                              innerIndex
+                            ]
+                              ? "green"
+                              : "red"
+                          }
+                        >
+                          {boardArray[outerIndex][innerIndex] === 0
+                            ? null
+                            : boardArray[outerIndex][innerIndex]}
+                        </Board.NumberContainer>
+                      ) : (
+                        <Board.NumberContainer>
+                          {boardArray[outerIndex][innerIndex] === 0
+                            ? null
+                            : boardArray[outerIndex][innerIndex]}
+                        </Board.NumberContainer>
+                      )}
                     </Board.TopBlock>
                   );
                 } else if (
@@ -100,11 +134,28 @@ export const BoardContainer: React.FC<{
                       key={`${innerIndex}`}
                       onClick={(e) => clickHandler(e, outerIndex, innerIndex)}
                     >
-                      <Board.NumberContainer>
-                        {boardArray[outerIndex][innerIndex] === 0
-                          ? null
-                          : boardArray[outerIndex][innerIndex]}
-                      </Board.NumberContainer>
+                      {solved ? (
+                        <Board.NumberContainer
+                          color={
+                            boardArray[outerIndex][innerIndex] ===
+                            Boards[currentBoardNumber][1][outerIndex][
+                              innerIndex
+                            ]
+                              ? "green"
+                              : "red"
+                          }
+                        >
+                          {boardArray[outerIndex][innerIndex] === 0
+                            ? null
+                            : boardArray[outerIndex][innerIndex]}
+                        </Board.NumberContainer>
+                      ) : (
+                        <Board.NumberContainer>
+                          {boardArray[outerIndex][innerIndex] === 0
+                            ? null
+                            : boardArray[outerIndex][innerIndex]}
+                        </Board.NumberContainer>
+                      )}
                     </Board.BottomBlock>
                   );
                 } else if (outerIndex === 8) {
@@ -113,11 +164,28 @@ export const BoardContainer: React.FC<{
                       key={`${innerIndex}`}
                       onClick={(e) => clickHandler(e, outerIndex, innerIndex)}
                     >
-                      <Board.NumberContainer>
-                        {boardArray[outerIndex][innerIndex] === 0
-                          ? null
-                          : boardArray[outerIndex][innerIndex]}
-                      </Board.NumberContainer>
+                      {solved ? (
+                        <Board.NumberContainer
+                          color={
+                            boardArray[outerIndex][innerIndex] ===
+                            Boards[currentBoardNumber][1][outerIndex][
+                              innerIndex
+                            ]
+                              ? "green"
+                              : "red"
+                          }
+                        >
+                          {boardArray[outerIndex][innerIndex] === 0
+                            ? null
+                            : boardArray[outerIndex][innerIndex]}
+                        </Board.NumberContainer>
+                      ) : (
+                        <Board.NumberContainer>
+                          {boardArray[outerIndex][innerIndex] === 0
+                            ? null
+                            : boardArray[outerIndex][innerIndex]}
+                        </Board.NumberContainer>
+                      )}
                     </Board.RightBlock>
                   );
                 } else {
@@ -126,11 +194,28 @@ export const BoardContainer: React.FC<{
                       key={`${innerIndex}`}
                       onClick={(e) => clickHandler(e, outerIndex, innerIndex)}
                     >
-                      <Board.NumberContainer>
-                        {boardArray[outerIndex][innerIndex] === 0
-                          ? null
-                          : boardArray[outerIndex][innerIndex]}
-                      </Board.NumberContainer>
+                      {solved ? (
+                        <Board.NumberContainer
+                          color={
+                            boardArray[outerIndex][innerIndex] ===
+                            Boards[currentBoardNumber][1][outerIndex][
+                              innerIndex
+                            ]
+                              ? "green"
+                              : "red"
+                          }
+                        >
+                          {boardArray[outerIndex][innerIndex] === 0
+                            ? null
+                            : boardArray[outerIndex][innerIndex]}
+                        </Board.NumberContainer>
+                      ) : (
+                        <Board.NumberContainer>
+                          {boardArray[outerIndex][innerIndex] === 0
+                            ? null
+                            : boardArray[outerIndex][innerIndex]}
+                        </Board.NumberContainer>
+                      )}
                     </Board.MiddleBlock>
                   );
                 }

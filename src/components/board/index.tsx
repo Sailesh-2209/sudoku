@@ -60,8 +60,13 @@ Board.RowContainer = function BoardRowContainer({
 
 Board.NumberContainer = function BoardNumberContainer({
   children,
+  color,
   ...restProps
-}: Props) {
+}: {
+  children: JSX.Element | JSX.Element[] | string;
+  restProps?: object;
+  color?: string;
+}) {
   return <Number {...restProps}>{children}</Number>;
 };
 

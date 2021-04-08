@@ -15,16 +15,6 @@ export const MiddleBlock = styled.div`
   align-items: center;
   position: relative;
 
-  p {
-    color: white;
-    font-size: 22px;
-    position: absolute;
-    padding: 0;
-    margin: -25% 0 0 -10%;
-    top: 50%;
-    left: 50%;
-  }
-
   &:first-of-type {
     border-top: 2px solid white;
   }
@@ -97,4 +87,13 @@ export const ColumnContainer = styled.div`
   }
 `;
 
-export const Number = styled.p``;
+export const Number = styled.p`
+  color: ${({ color }) =>
+    color === "red" ? "red" : color === "green" ? "green" : "white"};
+  font-size: 22px;
+  position: absolute;
+  padding: 0;
+  margin: -25% 0 0 -10%;
+  top: 50%;
+  left: 50%;
+`;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Board } from "../components";
+import { Boards } from "../constants/boards";
 
 export const BoardContainer: React.FC<{
   boardArray: React.ComponentState;
@@ -7,20 +8,19 @@ export const BoardContainer: React.FC<{
   setShowKeypad: React.ComponentState;
   showKeypad: React.ComponentState;
   keypadState: React.ComponentState;
-  unsolvedBoard: number[][];
   setKeypadState: React.ComponentState;
   clicked: React.ComponentState;
+  currentBoardNumber: React.ComponentState;
 }> = ({
   boardArray,
   setBoardArray,
   setShowKeypad,
   keypadState,
   showKeypad,
-  unsolvedBoard,
   setKeypadState,
   clicked,
+  currentBoardNumber,
 }) => {
-  const [unsolvedBoardLocal, setUnsolvedBoardLocal] = useState(unsolvedBoard);
   const [activeRowIndex, setActiveRowIndex] = useState(0);
   const [activeColIndex, setActiveColIndex] = useState(0);
 
@@ -29,10 +29,12 @@ export const BoardContainer: React.FC<{
     outerIndex: number,
     innerIndex: number
   ) => void = (e, outerIndex, innerIndex) => {
-    if (unsolvedBoardLocal[outerIndex][innerIndex] === 0) {
+    if (Boards[currentBoardNumber][0][outerIndex][innerIndex] === 0) {
       setShowKeypad(true);
       setActiveRowIndex(outerIndex);
       setActiveColIndex(innerIndex);
+    } else {
+      console.log(Boards[currentBoardNumber][0][outerIndex][innerIndex]);
     }
   };
 

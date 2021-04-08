@@ -5,19 +5,18 @@ import { Boards } from "../constants/boards";
 
 export const ButtonContainer: React.FC<{
   setBoardArray: React.ComponentState;
-  unsolvedBoard: number[][];
   solution: React.ComponentState;
   setSolution: React.ComponentState;
-}> = ({ setBoardArray, unsolvedBoard, solution, setSolution }) => {
+  setCurrentBoardNumber: React.ComponentState;
+}> = ({ setBoardArray, solution, setSolution, setCurrentBoardNumber }) => {
   const handleNewBoard = () => {
     let boardNumber: number = GenerateRandomNumber(0, Boards.length);
     let newBoard = Boards[boardNumber][0];
     let newSolution = Boards[boardNumber][1];
-    setBoardArray(newBoard);
+    setBoardArray(JSON.parse(JSON.stringify(newBoard)));
     setSolution(newSolution);
-    unsolvedBoard = newBoard;
+    setCurrentBoardNumber(boardNumber);
   };
-
   return (
     <Buttons>
       <Buttons.Button onClick={() => handleNewBoard()}>

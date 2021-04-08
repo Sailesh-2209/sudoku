@@ -12,12 +12,14 @@ let initialBoard = Boards[boardNumber][0];
 let solutionBoard = Boards[boardNumber][1];
 
 export const BodyContainer: React.FC = () => {
-  const [boardArray, setBoardArray] = useState(initialBoard);
+  const [boardArray, setBoardArray] = useState(
+    JSON.parse(JSON.stringify(initialBoard))
+  );
   const [solution, setSolution] = useState(solutionBoard);
   const [showKeypad, setShowKeypad] = useState(false);
   const [keypadState, setKeypadState] = useState(boardArray[0][0]);
   const [clicked, setClicked] = useState(false);
-  let unsolvedBoard = initialBoard;
+  const [currentBoardNumber, setCurrentBoardNumber] = useState(boardNumber);
   //@ts-ignore
 
   return (
@@ -29,9 +31,9 @@ export const BodyContainer: React.FC = () => {
         showKeypad={showKeypad}
         setShowKeypad={setShowKeypad}
         keypadState={keypadState}
-        unsolvedBoard={unsolvedBoard}
         setKeypadState={setKeypadState}
         clicked={clicked}
+        currentBoardNumber={currentBoardNumber}
       />
       <>
         {showKeypad ? (
@@ -44,9 +46,9 @@ export const BodyContainer: React.FC = () => {
       </>
       <ButtonContainer
         setBoardArray={setBoardArray}
-        unsolvedBoard={unsolvedBoard}
         solution={solution}
         setSolution={setSolution}
+        setCurrentBoardNumber={setCurrentBoardNumber}
       />
     </Body>
   );

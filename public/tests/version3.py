@@ -149,8 +149,7 @@ def rotate_board(board):
             new_board[i][j] = board[j][i]
     return new_board
 
-board_array = 
-[
+board_array = [
     [0, 2, 0, 5, 0, 0, 4, 7, 0], 
     [5, 0, 0, 7, 0, 0, 6, 0, 0], 
     [0, 0, 3, 0, 9, 0, 0, 0, 0], 

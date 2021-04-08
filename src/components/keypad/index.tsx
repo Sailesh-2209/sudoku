@@ -14,7 +14,14 @@ Keypad.Row = function KeypadRow({ children, ...restProps }: Props) {
   return <Row {...restProps}>{children}</Row>;
 };
 
-Keypad.Number = function KeypadNumber({ children, ...restProps }: Props) {
+Keypad.Number = function KeypadNumber({
+  children,
+  ...restProps
+}: {
+  children: JSX.Element | JSX.Element[] | string;
+  restProps?: object;
+  onClick?: React.MouseEventHandler;
+}) {
   return <Number {...restProps}>{children}</Number>;
 };
 

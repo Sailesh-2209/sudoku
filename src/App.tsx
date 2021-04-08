@@ -1,9 +1,9 @@
-import React from 'react';
-import { BodyContainer } from './containers/BodyContainer';
-import './App.css';
+import React from "react";
+import { BodyContainer } from "./containers/BodyContainer";
+import "./App.css";
 
 function App() {
-  return <BodyContainer />
+  return <BodyContainer />;
 }
 
 export default App;

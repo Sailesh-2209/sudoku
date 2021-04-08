@@ -13,6 +13,7 @@ export const BoardContainer: React.FC<{
   currentBoardNumber: React.ComponentState;
   solved: React.ComponentState;
   solution: React.ComponentState;
+  darkMode: React.ComponentState;
 }> = ({
   boardArray,
   setBoardArray,
@@ -24,6 +25,7 @@ export const BoardContainer: React.FC<{
   currentBoardNumber,
   solved,
   solution,
+  darkMode,
 }) => {
   const [activeRowIndex, setActiveRowIndex] = useState(0);
   const [activeColIndex, setActiveColIndex] = useState(0);
@@ -189,6 +191,7 @@ export const BoardContainer: React.FC<{
                     <Board.MiddleBlock
                       key={`${innerIndex}`}
                       onClick={(e) => clickHandler(e, outerIndex, innerIndex)}
+                      theme={darkMode ? "dark" : "light"}
                     >
                       {solved ? (
                         <Board.NumberContainer

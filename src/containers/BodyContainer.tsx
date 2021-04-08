@@ -21,11 +21,12 @@ export const BodyContainer: React.FC = () => {
   const [clicked, setClicked] = useState(false);
   const [currentBoardNumber, setCurrentBoardNumber] = useState(boardNumber);
   const [solved, setSolved] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   //@ts-ignore
 
   return (
     <Body>
-      <HeadingContainer />
+      <HeadingContainer darkMode={darkMode} setDarkMode={setDarkMode} />
       <BoardContainer
         boardArray={boardArray}
         setBoardArray={setBoardArray}
@@ -37,6 +38,7 @@ export const BodyContainer: React.FC = () => {
         currentBoardNumber={currentBoardNumber}
         solved={solved}
         solution={solution}
+        darkMode={darkMode}
       />
       <>
         {showKeypad ? (

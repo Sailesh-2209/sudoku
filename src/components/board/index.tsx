@@ -39,8 +39,14 @@ Board.LeftBlock = function BoardTopBlock({ children, ...restProps }: Props) {
 
 Board.MiddleBlock = function BoardMiddleblock({
   children,
+  theme,
   ...restProps
-}: Props) {
+}: {
+  children: JSX.Element | JSX.Element[] | string;
+  theme: string;
+  onClick?: React.MouseEventHandler;
+  restProps?: object;
+}) {
   return <MiddleBlock {...restProps}>{children}</MiddleBlock>;
 };
 

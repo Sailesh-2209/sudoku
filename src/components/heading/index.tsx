@@ -21,7 +21,15 @@ const Heading = ({ children, ...restProps }: Props) => {
   return <Container {...restProps}>{children}</Container>;
 };
 
-Heading.Text = function HeadingText({ children, ...restProps }: Props) {
+Heading.Text = function HeadingText({
+  children,
+  color,
+  ...restProps
+}: {
+  children: JSX.Element | JSX.Element[] | string;
+  color?: string;
+  restProps?: object;
+}) {
   return <Text {...restProps}>{children}</Text>;
 };
 
@@ -40,6 +48,7 @@ Heading.IconContainer = function HeadingIconContainer({
   restProps?: object;
   onMouseEnter?: React.MouseEventHandler<HTMLElement>;
   onMouseLeave?: React.MouseEventHandler<HTMLElement>;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }) {
   return <IconContainer {...restProps}>{children}</IconContainer>;
 };

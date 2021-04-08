@@ -12,6 +12,7 @@ export const BoardContainer: React.FC<{
   clicked: React.ComponentState;
   currentBoardNumber: React.ComponentState;
   solved: React.ComponentState;
+  solution: React.ComponentState;
 }> = ({
   boardArray,
   setBoardArray,
@@ -22,6 +23,7 @@ export const BoardContainer: React.FC<{
   clicked,
   currentBoardNumber,
   solved,
+  solution,
 }) => {
   const [activeRowIndex, setActiveRowIndex] = useState(0);
   const [activeColIndex, setActiveColIndex] = useState(0);
@@ -35,6 +37,8 @@ export const BoardContainer: React.FC<{
       setShowKeypad(true);
       setActiveRowIndex(outerIndex);
       setActiveColIndex(innerIndex);
+      console.log(solution[outerIndex][innerIndex]);
+      console.log(boardArray[outerIndex][innerIndex]);
     } else {
       console.log(Boards[currentBoardNumber][0][outerIndex][innerIndex]);
     }
@@ -70,9 +74,7 @@ export const BoardContainer: React.FC<{
                         <Board.NumberContainer
                           color={
                             boardArray[outerIndex][innerIndex] ===
-                            Boards[currentBoardNumber][1][outerIndex][
-                              innerIndex
-                            ]
+                            solution[outerIndex][innerIndex]
                               ? "green"
                               : "red"
                           }
@@ -104,9 +106,7 @@ export const BoardContainer: React.FC<{
                         <Board.NumberContainer
                           color={
                             boardArray[outerIndex][innerIndex] ===
-                            Boards[currentBoardNumber][1][outerIndex][
-                              innerIndex
-                            ]
+                            solution[outerIndex][innerIndex]
                               ? "green"
                               : "red"
                           }
@@ -138,9 +138,7 @@ export const BoardContainer: React.FC<{
                         <Board.NumberContainer
                           color={
                             boardArray[outerIndex][innerIndex] ===
-                            Boards[currentBoardNumber][1][outerIndex][
-                              innerIndex
-                            ]
+                            solution[outerIndex][innerIndex]
                               ? "green"
                               : "red"
                           }
@@ -168,9 +166,7 @@ export const BoardContainer: React.FC<{
                         <Board.NumberContainer
                           color={
                             boardArray[outerIndex][innerIndex] ===
-                            Boards[currentBoardNumber][1][outerIndex][
-                              innerIndex
-                            ]
+                            solution[outerIndex][innerIndex]
                               ? "green"
                               : "red"
                           }
@@ -198,9 +194,7 @@ export const BoardContainer: React.FC<{
                         <Board.NumberContainer
                           color={
                             boardArray[outerIndex][innerIndex] ===
-                            Boards[currentBoardNumber][1][outerIndex][
-                              innerIndex
-                            ]
+                            solution[outerIndex][innerIndex]
                               ? "green"
                               : "red"
                           }

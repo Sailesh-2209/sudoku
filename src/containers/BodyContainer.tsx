@@ -36,6 +36,7 @@ export const BodyContainer: React.FC = () => {
         clicked={clicked}
         currentBoardNumber={currentBoardNumber}
         solved={solved}
+        solution={solution}
       />
       <>
         {showKeypad ? (

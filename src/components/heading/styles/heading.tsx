@@ -17,6 +17,11 @@ export const Text = styled.p`
   margin-top: 30px;
   margin-bottom: 40px;
   color: white;
+
+  @media (max-width: 500px) {
+    font-size: 40px;
+    margin-top: 60px;
+  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -24,6 +29,11 @@ export const ButtonContainer = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
+
+  @media (max-width: 500px) {
+    top: 10px;
+    right: 0;
+  }
 `;
 
 export const InfoContainer = styled.div`

@@ -8,6 +8,7 @@ import {
   LeftBlock,
   RowContainer,
   ColumnContainer,
+  Number,
 } from "./styles/board";
 
 type Props = {
@@ -55,6 +56,13 @@ Board.RowContainer = function BoardRowContainer({
   ...restProps
 }: Props) {
   return <RowContainer {...restProps}>{children}</RowContainer>;
+};
+
+Board.NumberContainer = function BoardNumberContainer({
+  children,
+  ...restProps
+}: Props) {
+  return <Number {...restProps}>{children}</Number>;
 };
 
 export default Board;

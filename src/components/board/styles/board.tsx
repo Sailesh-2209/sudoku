@@ -96,3 +96,5 @@ export const ColumnContainer = styled.div`
     border-right: 1px solid yellow;
   }
 `;
+
+export const Number = styled.p``;

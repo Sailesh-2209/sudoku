@@ -11,6 +11,7 @@ export const BoardContainer: React.FC<{
   setKeypadState: React.ComponentState;
   clicked: React.ComponentState;
   currentBoardNumber: React.ComponentState;
+  solved: React.ComponentState;
 }> = ({
   boardArray,
   setBoardArray,
@@ -20,6 +21,7 @@ export const BoardContainer: React.FC<{
   setKeypadState,
   clicked,
   currentBoardNumber,
+  solved,
 }) => {
   const [activeRowIndex, setActiveRowIndex] = useState(0);
   const [activeColIndex, setActiveColIndex] = useState(0);
@@ -64,11 +66,11 @@ export const BoardContainer: React.FC<{
                       key={`${innerIndex}`}
                       onClick={(e) => clickHandler(e, outerIndex, innerIndex)}
                     >
-                      <p>
+                      <Board.NumberContainer>
                         {boardArray[outerIndex][innerIndex] === 0
                           ? null
                           : boardArray[outerIndex][innerIndex]}
-                      </p>
+                      </Board.NumberContainer>
                     </Board.LeftBlock>
                   );
                 } else if (
@@ -81,11 +83,11 @@ export const BoardContainer: React.FC<{
                       key={`${innerIndex}`}
                       onClick={(e) => clickHandler(e, outerIndex, innerIndex)}
                     >
-                      <p>
+                      <Board.NumberContainer>
                         {boardArray[outerIndex][innerIndex] === 0
                           ? null
                           : boardArray[outerIndex][innerIndex]}
-                      </p>
+                      </Board.NumberContainer>
                     </Board.TopBlock>
                   );
                 } else if (
@@ -98,11 +100,11 @@ export const BoardContainer: React.FC<{
                       key={`${innerIndex}`}
                       onClick={(e) => clickHandler(e, outerIndex, innerIndex)}
                     >
-                      <p>
+                      <Board.NumberContainer>
                         {boardArray[outerIndex][innerIndex] === 0
                           ? null
                           : boardArray[outerIndex][innerIndex]}
-                      </p>
+                      </Board.NumberContainer>
                     </Board.BottomBlock>
                   );
                 } else if (outerIndex === 8) {
@@ -111,11 +113,11 @@ export const BoardContainer: React.FC<{
                       key={`${innerIndex}`}
                       onClick={(e) => clickHandler(e, outerIndex, innerIndex)}
                     >
-                      <p>
+                      <Board.NumberContainer>
                         {boardArray[outerIndex][innerIndex] === 0
                           ? null
                           : boardArray[outerIndex][innerIndex]}
-                      </p>
+                      </Board.NumberContainer>
                     </Board.RightBlock>
                   );
                 } else {
@@ -124,11 +126,11 @@ export const BoardContainer: React.FC<{
                       key={`${innerIndex}`}
                       onClick={(e) => clickHandler(e, outerIndex, innerIndex)}
                     >
-                      <p>
+                      <Board.NumberContainer>
                         {boardArray[outerIndex][innerIndex] === 0
                           ? null
                           : boardArray[outerIndex][innerIndex]}
-                      </p>
+                      </Board.NumberContainer>
                     </Board.MiddleBlock>
                   );
                 }

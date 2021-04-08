@@ -8,27 +8,3 @@ body {
   padding: 0;
   background-color: rgb(8, 8, 24);
 }
-/* 
-.solve {
-  margin: 20px 0 auto 0;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  outline: none;
-  border: none;
-  height: 30px;
-  width: 80px;
-  border-radius: 5px;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  letter-spacing: 1px;
-  background: #f96476;
-  color: rgb(12, 16, 36);
-  transition: 0.5s ease;
-}
-
-.solve:hover {
-  background: rgb(161, 8, 8);
-  color: white;
-} */

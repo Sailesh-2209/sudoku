@@ -20,6 +20,7 @@ export const BodyContainer: React.FC = () => {
   const [keypadState, setKeypadState] = useState(boardArray[0][0]);
   const [clicked, setClicked] = useState(false);
   const [currentBoardNumber, setCurrentBoardNumber] = useState(boardNumber);
+  const [solved, setSolved] = useState(false);
   //@ts-ignore
 
   return (
@@ -34,6 +35,7 @@ export const BodyContainer: React.FC = () => {
         setKeypadState={setKeypadState}
         clicked={clicked}
         currentBoardNumber={currentBoardNumber}
+        solved={solved}
       />
       <>
         {showKeypad ? (
@@ -49,6 +51,7 @@ export const BodyContainer: React.FC = () => {
         solution={solution}
         setSolution={setSolution}
         setCurrentBoardNumber={setCurrentBoardNumber}
+        setSolved={setSolved}
       />
     </Body>
   );
